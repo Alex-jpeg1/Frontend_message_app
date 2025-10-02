@@ -1,11 +1,11 @@
 import {useState} from 'react';
 import {loginUser} from './handleLogin';
 
-function Login{
-	const [username, setUsername] = setState('');
-	const [password, setPassword] = setState('');
+function Login(){
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
 
-	const function handleSubmit = async() => {
+	const handleSubmit = async() => {
 		try{
 			const response = await loginUser(username, password);
 			console.log("Server response: ",response);
@@ -29,9 +29,9 @@ function Login{
 	    value = {password}
 	    onChange = {(e) => setPassword(e.target.value)}/>
 
-	   <button onClick{handleSubmit}> Login </button>
+	   <button onClick = {handleSubmit}> Login </button>
 	</div>
 	);  
 }
 
-default export Login;
+export default Login
